@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Alojamientos en Carmelo Uruguay — Casa Carmelo Golf y más propiedades. Reservá directamente con Viví Carmelo.">
+  <title>Propiedades — Viví Carmelo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">Viví <em>Carmelo</em></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="index.html#servicios">Nuestro Servicio</a></li>
+    <li><a href="propiedades.html" class="active">Propiedades</a></li>
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="faq.html">Preguntas Frecuentes</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="hero-orb hero-orb--a" aria-hidden="true"></div>
+  <div class="page-hero-inner">
+    <div class="hero-kicker">
+      <span class="hero-dot"></span>
+      <span>Alojamientos seleccionados</span>
+    </div>
+    <h1>Propiedades en Carmelo</h1>
+    <p>Gestionados profesionalmente por Viví Carmelo para una experiencia excepcional.</p>
+  </div>
+</div>
+
+<section class="section section--cream">
+  <div class="section-num" aria-hidden="true">01</div>
+  <div class="section-header reveal">
+    <span class="section-rule"></span>
+    <span class="label-eyebrow">Nuestra cartera</span>
+    <h2 class="section-heading">Espacios cuidados,<br>experiencias memorables</h2>
+  </div>
+  <div class="properties-grid" id="propiedadesGrid"></div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <span class="label-eyebrow reveal">¿Tenés una propiedad?</span>
+  <h2 class="reveal reveal-delay-1">Sumala a nuestra cartera.</h2>
+  <p class="reveal reveal-delay-2">Nos encargamos de todo y vos solo cobrás.</p>
+  <div class="cta-btns reveal reveal-delay-3">
+    <a href="propietarios.html" class="btn btn-cream">Soy propietario →</a>
+    <a href="contacto.html" class="btn btn-outline-cream">Contactar</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="logo-f">Viví <em>Carmelo</em></span>
+      <p>Administración profesional de propiedades para alquiler temporario en Carmelo y la región del Río Uruguay.</p>
+      <a href="mailto:hola@vivicarmelo.com" class="footer-email">hola@vivicarmelo.com</a>
+    </div>
+    <nav class="footer-nav">
+      <h4>Páginas</h4>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="propiedades.html">Propiedades</a></li>
+        <li><a href="propietarios.html">Para Propietarios</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="faq.html">Preguntas Frecuentes</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-nav">
+      <h4>El destino</h4>
+      <ul>
+        <li><a href="#">Carmelo Golf Club</a></li>
+        <li><a href="#">Bodegas de la región</a></li>
+        <li><a href="#">Río Uruguay</a></li>
+        <li><a href="#">Ferry desde Buenos Aires</a></li>
+        <li><a href="#">Colonia del Sacramento</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Viví Carmelo. Todos los derechos reservados.</span>
+    <span>Carmelo · Colonia · Uruguay</span>
+  </div>
+</footer>
+
+<!-- Modal -->
+<div class="prop-modal-overlay" id="propModal" role="dialog" aria-modal="true" aria-label="Detalle de propiedad">
+  <div class="prop-modal">
+    <button class="modal-close" id="modalClose" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+
+    <!-- Gallery -->
+    <div class="modal-gallery" id="modalGallery">
+      <div class="gallery-track-wrap">
+        <div class="gallery-track" id="galleryTrack"></div>
+      </div>
+      <button class="gallery-nav-btn prev" id="galleryPrev" aria-label="Foto anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="gallery-nav-btn next" id="galleryNext" aria-label="Foto siguiente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <div class="gallery-dots" id="galleryDots"></div>
+      <div class="gallery-counter" id="galleryCounter"></div>
+    </div>
+
+    <!-- Info -->
+    <div class="modal-info" id="modalInfo"></div>
+  </div>
+</div>
+
+<a href="https://wa.me/[NUMERO]" class="wa-float" target="_blank" aria-label="WhatsApp"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+<script>
+/* ─── DATA ─────────────────────────────────────────────────────────
+   Para agregar una nueva propiedad, copiá el bloque de ejemplo
+   y completá los campos. Las fotos son rutas relativas o URLs.
+   Si no tenés fotos, dejá el array vacío [].
+────────────────────────────────────────────────────────────────── */
+const PROPIEDADES = [
+  {
+    id: 'casa-carmelo-golf',
+    nombre: 'Casa Carmelo Golf',
+    badge: 'Carmelo Golf Club',
+    descripcionCorta: 'Casa con pileta y jardín dentro del Carmelo Golf Club.',
+    descripcion: 'Casa de 3 habitaciones y 2 baños con pileta, parrilla y jardín, ubicada dentro del Carmelo Golf Club. A pasos del campo de golf y a 15 minutos de las principales bodegas de la región. Ideal para parejas, familias o grupos que buscan descanso, golf y enoturismo en un entorno natural único.',
+    meta: { habitaciones: 3, banos: 2, personas: 6 },
+    tags: ['Golf', 'Pileta', 'Parrilla', 'Jardín'],
+    amenidades: ['Wi-Fi', 'Aire acondicionado', 'Calefacción', 'Cocina equipada', 'Parrilla', 'Pileta privada', 'Jardín', 'Estacionamiento', 'Ropa de cama', 'Toallas'],
+    airbnbUrl: '#',  /* Reemplazá con la URL real de Airbnb */
+    fotos: [
+      /* Agregá rutas de fotos reales cuando estén disponibles, por ejemplo: */
+      /* { src: 'fotos/casa-golf-01.jpg', alt: 'Frente de la casa' }, */
+      /* { src: 'fotos/casa-golf-02.jpg', alt: 'Pileta y jardín' },   */
+    ]
+  },
+
+  /* ── Plantilla para nueva propiedad ────────────────────────────
+  {
+    id: 'nombre-unico-sin-espacios',
+    nombre: 'Nombre de la propiedad',
+    badge: 'Zona o punto de referencia',
+    descripcionCorta: 'Descripción breve que aparece en la tarjeta.',
+    descripcion: 'Descripción larga que aparece en el modal con todos los detalles.',
+    meta: { habitaciones: 2, banos: 1, personas: 4 },
+    tags: ['Tag 1', 'Tag 2', 'Tag 3'],
+    amenidades: ['Wi-Fi', 'Cocina equipada', 'Estacionamiento'],
+    airbnbUrl: 'https://www.airbnb.com/rooms/TU_ID',
+    fotos: [
+      { src: 'fotos/propiedad-01.jpg', alt: 'Descripción foto 1' },
+      { src: 'fotos/propiedad-02.jpg', alt: 'Descripción foto 2' },
+    ]
+  },
+  ── */
+];
+
+/* ─── SVG ICONS ─────────────────────────────────────────────── */
+const ICON = {
+  bed:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9V4a1 1 0 011-1h18a1 1 0 011 1v5"/><path d="M2 20v-5a2 2 0 012-2h16a2 2 0 012 2v5"/><path d="M2 15h20"/><path d="M6 9h4a1 1 0 001-1V6H5v2a1 1 0 001 1z"/></svg>',
+  bath:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6L9 2a2 2 0 014 0v1"/><rect x="2" y="11" width="20" height="4" rx="2"/><path d="M4 15v4"/><path d="M20 15v4"/><path d="M4 19h16"/></svg>',
+  guests: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>',
+  img:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>',
+};
+
+/* ─── RENDER CARDS ──────────────────────────────────────────── */
+function renderCards() {
+  const grid = document.getElementById('propiedadesGrid');
+
+  PROPIEDADES.forEach((p, i) => {
+    const delay = i === 0 ? 'reveal-delay-1' : 'reveal-delay-2';
+    const card = document.createElement('div');
+    card.className = `prop-card reveal ${delay}`;
+    card.setAttribute('data-id', p.id);
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', `Ver detalles de ${p.nombre}`);
+
+    const tagsHtml = p.tags.map(t => `<span class="prop-tag">${t}</span>`).join('');
+
+    card.innerHTML = `
+      <div class="prop-img">
+        <span class="prop-img-badge">${p.badge}</span>
+        <div class="prop-img-hint"><span>Ver propiedad</span></div>
+      </div>
+      <div class="prop-body">
+        <div class="prop-tags">${tagsHtml}</div>
+        <h3>${p.nombre}</h3>
+        <p>${p.descripcionCorta}</p>
+        <div class="prop-meta">
+          <span>${ICON.bed} ${p.meta.habitaciones} habitaciones</span>
+          <span>${ICON.bath} ${p.meta.banos} baños</span>
+          <span>${ICON.guests} ${p.meta.personas} personas</span>
+        </div>
+        <div class="btn btn-outline-dark" style="display:block;text-align:center;cursor:pointer;">Ver fotos e info →</div>
+      </div>`;
+
+    card.addEventListener('click', () => openModal(p.id));
+    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(p.id); } });
+    grid.appendChild(card);
+  });
+
+  /* Placeholder card to invite new owners */
+  const placeholder = document.createElement('div');
+  placeholder.className = 'prop-card reveal reveal-delay-2';
+  placeholder.style.opacity = '.5';
+  placeholder.innerHTML = `
+    <div class="prop-img" style="background:var(--cream-alt);display:flex;align-items:center;justify-content:center;">
+      <span style="font-family:var(--f-display);font-style:italic;color:var(--ink-muted);font-size:1.1rem;">Próximamente</span>
+    </div>
+    <div class="prop-body">
+      <h3>Nueva propiedad en camino</h3>
+      <p>¿Tenés una propiedad en Carmelo o la región? Podría aparecer aquí. Contactanos para sumarte.</p>
+      <a href="contacto.html" class="btn btn-outline-dark" style="display:block;text-align:center;">Quiero sumar mi propiedad</a>
+    </div>`;
+  grid.appendChild(placeholder);
+}
+
+/* ─── MODAL STATE ───────────────────────────────────────────── */
+let currentIndex = 0;
+let currentPhotos = [];
+
+function openModal(id) {
+  const p = PROPIEDADES.find(x => x.id === id);
+  if (!p) return;
+
+  currentPhotos = p.fotos || [];
+  currentIndex = 0;
+
+  buildGallery(p);
+  buildInfo(p);
+
+  const overlay = document.getElementById('propModal');
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  overlay.querySelector('.prop-modal').focus();
+}
+
+function closeModal() {
+  document.getElementById('propModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function buildGallery(p) {
+  const track = document.getElementById('galleryTrack');
+  const dots  = document.getElementById('galleryDots');
+  const counter = document.getElementById('galleryCounter');
+  const prevBtn = document.getElementById('galleryPrev');
+  const nextBtn = document.getElementById('galleryNext');
+  track.innerHTML = '';
+  dots.innerHTML = '';
+
+  const photos = p.fotos && p.fotos.length ? p.fotos : null;
+
+  if (photos) {
+    photos.forEach((photo, i) => {
+      const slide = document.createElement('div');
+      slide.className = 'gallery-slide';
+      const img = document.createElement('img');
+      img.src = photo.src;
+      img.alt = photo.alt || p.nombre;
+      img.loading = 'lazy';
+      slide.appendChild(img);
+      track.appendChild(slide);
+
+      const dot = document.createElement('button');
+      dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Foto ${i + 1}`);
+      dot.addEventListener('click', () => goToPhoto(i));
+      dots.appendChild(dot);
+    });
+
+    counter.textContent = `1 / ${photos.length}`;
+    prevBtn.style.display = photos.length > 1 ? 'flex' : 'none';
+    nextBtn.style.display = photos.length > 1 ? 'flex' : 'none';
+    dots.style.display    = photos.length > 1 ? 'flex' : 'none';
+    counter.style.display = photos.length > 1 ? '' : 'none';
+  } else {
+    const slide = document.createElement('div');
+    slide.className = 'gallery-slide';
+    slide.innerHTML = `<div class="gallery-placeholder">${ICON.img}<span>Fotos próximamente</span></div>`;
+    track.appendChild(slide);
+    prevBtn.style.display = 'none';
+    nextBtn.style.display = 'none';
+    dots.style.display    = 'none';
+    counter.style.display = 'none';
+  }
+
+  track.style.transform = 'translateX(0)';
+}
+
+function buildInfo(p) {
+  const container = document.getElementById('modalInfo');
+  const tagsHtml = p.tags.map(t => `<span class="prop-tag">${t}</span>`).join('');
+  const amenHtml = p.amenidades.map(a => `<span class="modal-amenidad">${a}</span>`).join('');
+  const airbnbDisabled = p.airbnbUrl === '#';
+  const airbnbLabel = airbnbDisabled ? 'Reservas próximamente' : 'Reservar en Airbnb →';
+
+  container.innerHTML = `
+    <div class="modal-badge">${p.badge}</div>
+    <h2 class="modal-title">${p.nombre}</h2>
+    <div class="modal-tags">${tagsHtml}</div>
+    <div class="modal-meta-row">
+      <span class="modal-meta-item">${ICON.bed} ${p.meta.habitaciones} habitaciones</span>
+      <span class="modal-meta-item">${ICON.bath} ${p.meta.banos} baños</span>
+      <span class="modal-meta-item">${ICON.guests} ${p.meta.personas} personas</span>
+    </div>
+    <p class="modal-desc">${p.descripcion}</p>
+    <div class="modal-section-label">Incluye</div>
+    <div class="modal-amenidades">${amenHtml}</div>
+    <a href="${p.airbnbUrl}" class="modal-airbnb-btn" ${p.airbnbUrl === '#' ? '' : 'target="_blank" rel="noopener"'}>${airbnbLabel}</a>
+  `;
+}
+
+function goToPhoto(index) {
+  if (!currentPhotos.length) return;
+  const photos = currentPhotos;
+  currentIndex = (index + photos.length) % photos.length;
+
+  const track = document.getElementById('galleryTrack');
+  const dots  = document.querySelectorAll('.gallery-dot');
+  const counter = document.getElementById('galleryCounter');
+
+  track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+  counter.textContent = `${currentIndex + 1} / ${photos.length}`;
+}
+
+/* ─── TOUCH SWIPE ───────────────────────────────────────────── */
+let touchStartX = 0;
+document.getElementById('modalGallery').addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+document.getElementById('modalGallery').addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(dx) > 40) goToPhoto(currentIndex + (dx < 0 ? 1 : -1));
+}, { passive: true });
+
+/* ─── EVENTS ────────────────────────────────────────────────── */
+document.getElementById('galleryPrev').addEventListener('click', () => goToPhoto(currentIndex - 1));
+document.getElementById('galleryNext').addEventListener('click', () => goToPhoto(currentIndex + 1));
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.getElementById('propModal').addEventListener('click', e => {
+  if (e.target === document.getElementById('propModal')) closeModal();
+});
+document.addEventListener('keydown', e => {
+  const modal = document.getElementById('propModal');
+  if (!modal.classList.contains('open')) return;
+  if (e.key === 'Escape') closeModal();
+  if (e.key === 'ArrowLeft')  goToPhoto(currentIndex - 1);
+  if (e.key === 'ArrowRight') goToPhoto(currentIndex + 1);
+});
+
+/* ─── INIT ──────────────────────────────────────────────────── */
+renderCards();
+
+/* Nav scroll */
+const nav = document.getElementById('mainNav');
+if (window.scrollY > 40) nav.classList.add('scrolled');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+const toggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+/* Reveal observer */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+
+function observeReveals() {
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+observeReveals();
+/* Re-observe after cards are rendered (they start hidden) */
+setTimeout(observeReveals, 50);
+</script>
+</body>
+</html>

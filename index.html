@@ -28,6 +28,15 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-slideshow" aria-hidden="true">
+    <img class="hero-slide active" src="https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684417/imgprincipal_ublb2f.webp" alt="">
+    <img class="hero-slide" src="https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684418/D_799223-MLU112601869758_062026-F_sewuut.webp" alt="">
+    <img class="hero-slide" src="https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684416/D_624081-MLU113781447221_062026-F_zghul9.webp" alt="">
+    <img class="hero-slide" src="https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684417/D_645344-MLU112602106020_062026-F_f5ar5d.webp" alt="">
+    <img class="hero-slide" src="https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684418/D_855606-MLU113781360669_062026-F_rplbp0.webp" alt="">
+    <img class="hero-slide" src="https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684418/D_829951-MLU113781360665_062026-F_dbgapz.webp" alt="">
+    <div class="hero-overlay"></div>
+  </div>
   <div class="hero-orb hero-orb--a" aria-hidden="true"></div>
   <div class="hero-orb hero-orb--b" aria-hidden="true"></div>
 
@@ -353,6 +362,15 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
 }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* Hero slideshow */
+const slides = document.querySelectorAll('.hero-slide');
+let current = 0;
+setInterval(() => {
+  slides[current].classList.remove('active');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+}, 5000);
 </script>
 </body>
 </html>

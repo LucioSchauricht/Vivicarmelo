@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRPR9D5BZB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-QRPR9D5BZB");
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Somos una familia de Carmelo que combina conocimiento local con tecnología de inteligencia artificial para gestionar propiedades en Airbnb.">
   <title>Nosotros — Viví Carmelo</title>
   <link rel="stylesheet" href="styles.css">
+   <link rel="icon" href="https://res.cloudinary.com/dhe2flcrt/image/upload/v1782695231/favicon_c6m3of.ico" type="image/png">
 </head>
 <body>
 
@@ -21,6 +30,7 @@
     <li><a href="nosotros.html" class="active">Nosotros</a></li>
     <li><a href="faq.html">Preguntas Frecuentes</a></li>
     <li><a href="contacto.html">Contacto</a></li>
+    <li><a href="propietarios.html">Propietarios</a></li>
   </ul>
 </nav>
 
@@ -31,7 +41,7 @@
       <span class="hero-dot"></span>
       <span>Nosotros</span>
     </div>
-    <h1>Somos de Carmelo.<br>Conocemos el destino.</h1>
+    <h1><br>Conocemos Carmelo.</h1>
     <p>Una familia que combina amor por el lugar con tecnología de vanguardia.</p>
   </div>
 </div>
@@ -49,9 +59,9 @@
   <div style="max-width:760px;margin:4rem auto 0;" class="reveal">
     <p class="body-text">
       Somos una familia que vive y disfruta Carmelo — el golf, las bodegas, el río.
-      Eso nos da un conocimiento local que ninguna empresa de Montevideo puede replicar:
+      Eso nos da un conocimiento local dificíl de replicar:
       sabemos qué busca el huésped que viene a jugar al golf, qué espera la pareja
-      que viene de Buenos Aires a hacer enoturismo, qué necesita la familia que
+      que viene hacer enoturismo, qué necesita la familia que
       quiere desconectarse junto al río.
     </p>
     <p class="body-text" style="margin-top:1rem;">
@@ -63,9 +73,41 @@
   </div>
 </section>
 
+<!-- EQUIPO -->
+<section class="section section--light">
+  <div class="section-num" aria-hidden="true">02</div>
+  <div class="section-header text-center reveal">
+    <span class="section-rule" style="margin:0 auto;"></span>
+    <span class="label-eyebrow">El equipo</span>
+    <h2 class="section-heading">Tres personas</h2>
+  </div>
+
+  <div class="team-grid">
+    <div class="team-card reveal reveal-delay-2">
+      <span class="team-initial">M</span>
+      <h3>Mónica</h3>
+      <span class="team-role">Alianzas y turismo regional</span>
+      <p>Apasionada por el diseño, la hospitalidad y los detalles que hacen memorable una estadía. Construye relaciones con bodegas, operadores turísticos y los principales atractivos de la región — asegurando que cada huésped viva Carmelo de una forma auténtica y cuidada.</p>
+    </div>
+    <div class="team-card reveal reveal-delay-1">
+      <span class="team-initial">P</span>
+      <h3>Pilar</h3>
+      <span class="team-role">Community manager</span>
+      <p>Gestiona la presencia de Viví Carmelo en redes sociales, construye la comunidad online y cuenta la historia del destino a través de contenido auténtico.</p>
+    </div>
+    <div class="team-card reveal reveal-delay-3">
+      <span class="team-initial">L</span>
+      <h3>Lucio</h3>
+      <span class="team-role">Tecnología e Inteligencia Artificial</span>
+      <p>Diseña y opera los sistemas de IA, pricing dinámico y gestión digital de propiedades. La tecnología al servicio de la experiencia humana.</p>
+    </div>
+
+  </div>
+</section>
+
 <!-- VALORES -->
 <section class="section section--forest" style="background:var(--forest);">
-  <div class="section-num" style="color:#fff;opacity:.03;" aria-hidden="true">02</div>
+  <div class="section-num" style="color:#fff;opacity:.03;" aria-hidden="true">03</div>
   <div class="section-header text-center reveal">
     <span class="section-rule" style="margin:0 auto;background:rgba(255,255,255,.2);"></span>
     <span class="label-eyebrow">Lo que nos mueve</span>
@@ -145,6 +187,23 @@
 
 <script>
 const nav = document.getElementById('mainNav');
+/* Active nav link por sección */
+const sections = document.querySelectorAll('section[id]');
+const navItems = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    if (window.scrollY >= section.offsetTop - 100) {
+      current = section.getAttribute('id');
+    }
+  });
+  navItems.forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) {
+      a.classList.add('active');
+    }
+  });
+}, { passive: true });
 if (window.scrollY > 40) nav.classList.add('scrolled');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
 const toggle = document.getElementById('navToggle');

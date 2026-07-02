@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRPR9D5BZB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-QRPR9D5BZB");
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Alojamientos en Carmelo Uruguay — Casa Carmelo Golf y más propiedades. Reservá directamente con Viví Carmelo.">
   <title>Propiedades — Viví Carmelo</title>
   <link rel="stylesheet" href="styles.css">
+
+   <link rel="icon" href="https://res.cloudinary.com/dhe2flcrt/image/upload/v1782695231/favicon_c6m3of.ico" type="image/png">
 </head>
 <body>
 
@@ -21,6 +31,7 @@
     <li><a href="nosotros.html">Nosotros</a></li>
     <li><a href="faq.html">Preguntas Frecuentes</a></li>
     <li><a href="contacto.html">Contacto</a></li>
+    <li><a href="propietarios.html">Propietarios</a></li>
   </ul>
 </nav>
 
@@ -130,19 +141,30 @@
 const PROPIEDADES = [
   {
     id: 'casa-carmelo-golf',
-    nombre: 'Casa Carmelo Golf',
-    badge: 'Carmelo Golf Club',
-    descripcionCorta: 'Casa con pileta y jardín dentro del Carmelo Golf Club.',
-    descripcion: 'Casa de 3 habitaciones y 2 baños con pileta, parrilla y jardín, ubicada dentro del Carmelo Golf Club. A pasos del campo de golf y a 15 minutos de las principales bodegas de la región. Ideal para parejas, familias o grupos que buscan descanso, golf y enoturismo en un entorno natural único.',
-    meta: { habitaciones: 3, banos: 2, personas: 6 },
-    tags: ['Golf', 'Pileta', 'Parrilla', 'Jardín'],
-    amenidades: ['Wi-Fi', 'Aire acondicionado', 'Calefacción', 'Cocina equipada', 'Parrilla', 'Pileta privada', 'Jardín', 'Estacionamiento', 'Ropa de cama', 'Toallas'],
-    airbnbUrl: '#',  /* Reemplazá con la URL real de Airbnb */
+    nombre: 'Casa de Diseño en Carmelo Golf Club',
+    badge: 'Carmelo Golf Club · Barrio Cerrado',
+    descripcionCorta: 'Residencia de diseño a estrenar, 250m², piscina privada y jardín dentro de Carmelo Golf Club.',
+    descripcion: 'Exclusiva residencia a estrenar ubicada dentro del Carmelo Golf Club. Arquitectura contemporánea de 250m², amplios espacios y excelente iluminación natural con vista al campo de golf. Se entrega completamente amoblada y equipada, lista para ingresar. Ideal para familias, grupos de golf o escapadas desde Argentina. A 15 minutos de las principales bodegas de la región y a 2hs del ferry desde Buenos Aires.',
+    meta: { habitaciones: 3, baños: 3, personas: 6 },
+    tags: ['Golf', 'Piscina', 'Parrilla', 'Jardín', 'Barrio cerrado', 'Amoblada'],
+    amenidades: ['Amoblada y equipada', 'Piscina privada', 'Parrilla / BBQ', 'Jardín', 'Cocheras x2', 'Aire acondicionado', 'Calefacción pellet', 'Cocina completa', 'Lavarropas', 'Wi-Fi', 'Smart TV', 'Ropa de cama', 'Toallas', 'Barrio cerrado 24hs'],
+    airbnbUrl: 'https://es.airbnb.com/rooms/1715490424810065750',  /* Reemplazá con la URL real de Airbnb */
     fotos: [
-      /* Agregá rutas de fotos reales cuando estén disponibles, por ejemplo: */
-      /* { src: 'fotos/casa-golf-01.jpg', alt: 'Frente de la casa' }, */
-      /* { src: 'fotos/casa-golf-02.jpg', alt: 'Pileta y jardín' },   */
+
+      { src: 'https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684417/imgprincipal_ublb2f.webp', alt: 'Frente de la casa'},
+      { src: 'https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684418/D_799223-MLU112601869758_062026-F_sewuut.webp', alt: 'Living comedor integrado' },
+      { src: 'https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684416/D_624081-MLU113781447221_062026-F_zghul9.webp', alt: 'Living con ventanales al jardín' },
+      { src: 'https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684417/D_645344-MLU112602106020_062026-F_f5ar5d.webp', alt: 'Cocina principal' },
+      { src: 'https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684418/D_855606-MLU113781360669_062026-F_rplbp0.webp', alt: 'Cocina' },
+      { src: 'https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684418/D_965142-MLU113780794047_062026-F_kz7s0x.webp', alt: 'Lavadero' },
+      { src: 'https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684418/D_829951-MLU113781360665_062026-F_dbgapz.webp', alt: 'Dormitorio 1' },
+      { src: 'https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684418/D_749730-MLU112601283720_062026-F_u3ocnp.webp', alt: 'Vestidor' },
+      { src: 'https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684416/D_637953-MLU112601872682_062026-F_y3grwy.webp', alt: 'Baño 1' },
+      { src: 'https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684417/D_611230-MLU113781390581_062026-F_iceiqf.webp', alt: 'Dormitorio 2' },
+      { src: 'https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684418/D_948275-MLU112601545126_062026-F_fb5j80.webp', alt: 'Dormitorio 3' },
+      { src: 'https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684417/D_996710-MLU113780797905_062026-F_a0pwtd.webp', alt: 'Baño 2' },
     ]
+
   },
 
   /* ── Plantilla para nueva propiedad ────────────────────────────
@@ -188,7 +210,7 @@ function renderCards() {
     const tagsHtml = p.tags.map(t => `<span class="prop-tag">${t}</span>`).join('');
 
     card.innerHTML = `
-      <div class="prop-img">
+     <div class="prop-img" style="${p.fotos && p.fotos.length ? 'background-image:url(' + p.fotos[0].src + ');background-size:cover;background-position:center;' : ''}">
         <span class="prop-img-badge">${p.badge}</span>
         <div class="prop-img-hint"><span>Ver propiedad</span></div>
       </div>
@@ -198,7 +220,7 @@ function renderCards() {
         <p>${p.descripcionCorta}</p>
         <div class="prop-meta">
           <span>${ICON.bed} ${p.meta.habitaciones} habitaciones</span>
-          <span>${ICON.bath} ${p.meta.banos} baños</span>
+          <span>${ICON.bath} ${p.meta.baños} baños</span>
           <span>${ICON.guests} ${p.meta.personas} personas</span>
         </div>
         <div class="btn btn-outline-dark" style="display:block;text-align:center;cursor:pointer;">Ver fotos e info →</div>
@@ -300,6 +322,7 @@ function buildGallery(p) {
 }
 
 function buildInfo(p) {
+
   const container = document.getElementById('modalInfo');
   const tagsHtml = p.tags.map(t => `<span class="prop-tag">${t}</span>`).join('');
   const amenHtml = p.amenidades.map(a => `<span class="modal-amenidad">${a}</span>`).join('');
@@ -312,13 +335,14 @@ function buildInfo(p) {
     <div class="modal-tags">${tagsHtml}</div>
     <div class="modal-meta-row">
       <span class="modal-meta-item">${ICON.bed} ${p.meta.habitaciones} habitaciones</span>
-      <span class="modal-meta-item">${ICON.bath} ${p.meta.banos} baños</span>
+      <span class="modal-meta-item">${ICON.bath} ${p.meta.baños} baños</span>
       <span class="modal-meta-item">${ICON.guests} ${p.meta.personas} personas</span>
     </div>
     <p class="modal-desc">${p.descripcion}</p>
     <div class="modal-section-label">Incluye</div>
     <div class="modal-amenidades">${amenHtml}</div>
     <a href="${p.airbnbUrl}" class="modal-airbnb-btn" ${p.airbnbUrl === '#' ? '' : 'target="_blank" rel="noopener"'}>${airbnbLabel}</a>
+    ${p.ubicacion ? '<div class="modal-ubicacion">📍 ' + p.ubicacion + '</div>' : ''}
   `;
 }
 
@@ -366,6 +390,23 @@ renderCards();
 
 /* Nav scroll */
 const nav = document.getElementById('mainNav');
+/* Active nav link por sección */
+const sections = document.querySelectorAll('section[id]');
+const navItems = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    if (window.scrollY >= section.offsetTop - 100) {
+      current = section.getAttribute('id');
+    }
+  });
+  navItems.forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) {
+      a.classList.add('active');
+    }
+  });
+}, { passive: true });
 if (window.scrollY > 40) nav.classList.add('scrolled');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
 const toggle = document.getElementById('navToggle');

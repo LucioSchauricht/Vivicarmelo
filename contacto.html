@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRPR9D5BZB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-QRPR9D5BZB");
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contactá a Viví Carmelo — Administración de propiedades Airbnb en Carmelo, Uruguay. Respondemos en menos de 24 horas.">
   <title>Contacto — Viví Carmelo</title>
   <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://res.cloudinary.com/dhe2flcrt/image/upload/v1782695231/favicon_c6m3of.ico" type="image/png">
 </head>
 <body>
 
@@ -94,8 +103,7 @@
       <span class="label-eyebrow">Formulario de contacto</span>
       <h3 style="font-family:var(--f-display);font-size:1.5rem;font-weight:500;color:var(--forest);margin-bottom:2rem;letter-spacing:-.01em;">Envianos tu consulta</h3>
 
-      <form id="contactForm" class="form-v2" onsubmit="handleSubmit(event)">
-        <div class="form-group">
+        <form id="contactForm" class="form-v2" action="https://formspree.io/f/meebzlkk" method="POST">        <div class="form-group">
           <label for="nombre">Nombre completo</label>
           <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
         </div>
@@ -189,6 +197,23 @@
 
 <script>
 const nav = document.getElementById('mainNav');
+/* Active nav link por sección */
+const sections = document.querySelectorAll('section[id]');
+const navItems = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    if (window.scrollY >= section.offsetTop - 100) {
+      current = section.getAttribute('id');
+    }
+  });
+  navItems.forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) {
+      a.classList.add('active');
+    }
+  });
+}, { passive: true });
 if (window.scrollY > 40) nav.classList.add('scrolled');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
 const toggle = document.getElementById('navToggle');
@@ -196,11 +221,7 @@ const navLinks = document.getElementById('navLinks');
 toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
-function handleSubmit(e) {
-  e.preventDefault();
-  document.getElementById('contactForm').style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
-}
+
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });

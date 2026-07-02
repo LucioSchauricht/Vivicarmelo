@@ -319,9 +319,9 @@ ul { list-style: none; }
   position: absolute;
   inset: 0;
   left: 0;
-  width: 35%;
+  width: 18%;
   z-index: 2;
-  background: linear-gradient(to right, #0C1705 0%, transparent 100%);
+  background: linear-gradient(to right, #0F1A04 0%, transparent 100%);
   pointer-events: none;
 }
 .hero-slide {

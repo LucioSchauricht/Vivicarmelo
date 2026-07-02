@@ -314,6 +314,16 @@ ul { list-style: none; }
   position: relative;
   overflow: hidden;
 }
+.hero-slideshow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: 0;
+  width: 35%;
+  z-index: 2;
+  background: linear-gradient(to right, #0C1705 0%, transparent 100%);
+  pointer-events: none;
+}
 .hero-slide {
   position: absolute;
   inset: 0;

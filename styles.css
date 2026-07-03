@@ -313,8 +313,10 @@ ul { list-style: none; }
 .hero-slideshow {
   position: relative;
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%);
-  mask-image: linear-gradient(to right, transparent 0%, black 12%);
+  margin-left: -15%;
+  z-index: 3;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
+  mask-image: linear-gradient(to right, transparent 0%, black 30%);
 }
 .hero-slide {
   position: absolute;
@@ -1754,6 +1756,7 @@ footer::before {
   .section { padding: 70px 5%; }
   .hero { grid-template-columns: 1fr; grid-template-rows: auto 55vw; }
   .hero-content { padding: 110px 5% 50px; }
+  .hero-slideshow { margin-left: 0; -webkit-mask-image: none; mask-image: none; }
   .hero-title { font-size: 2.2rem; }
   .hero-btns { flex-direction: column; }
   .hero-btns .btn { text-align: center; }

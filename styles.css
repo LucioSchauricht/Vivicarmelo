@@ -308,21 +308,17 @@ ul { list-style: none; }
   justify-content: center;
   padding: 120px 7% 80px;
   overflow: hidden;
+  background: linear-gradient(to right, #0F1A04 75%, transparent 100%);
 }
 
 .hero-slideshow {
   position: relative;
   overflow: hidden;
+  margin-left: -10%;
+  z-index: 0;
 }
 .hero-slideshow::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  left: 0;
-  width: 8%;
-  z-index: 2;
-  background: linear-gradient(to right, #0F1A04 0%, transparent 100%);
-  pointer-events: none;
+  display: none;
 }
 .hero-slide {
   position: absolute;
@@ -1761,7 +1757,8 @@ footer::before {
 
   .section { padding: 70px 5%; }
   .hero { grid-template-columns: 1fr; grid-template-rows: auto 55vw; }
-  .hero-content { padding: 110px 5% 50px; }
+  .hero-content { padding: 110px 5% 50px; background: none; }
+  .hero-slideshow { margin-left: 0; }
   .hero-title { font-size: 2.2rem; }
   .hero-btns { flex-direction: column; }
   .hero-btns .btn { text-align: center; }

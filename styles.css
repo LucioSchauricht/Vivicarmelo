@@ -313,10 +313,10 @@ ul { list-style: none; }
 .hero-slideshow {
   position: relative;
   overflow: hidden;
-  margin-left: -25%;
+  margin-left: -30%;
   z-index: 3;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 40%);
-  mask-image: linear-gradient(to right, transparent 0%, black 40%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 45%);
+  mask-image: linear-gradient(to right, transparent 0%, black 45%);
 }
 .hero-slide {
   position: absolute;

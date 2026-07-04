@@ -5,7 +5,6 @@
    Paleta: Crema cálida · Tinta foresta · Ámbar ocre
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
 
 /* ── Variables ─────────────────────────────────────────────── */
 :root {
@@ -1069,7 +1068,9 @@ ul { list-style: none; }
   background: var(--forest);
   color: var(--cream);
 }
-.pricing-feature .label-eyebrow { color: var(--ochre); }
+.pricing-feature .label-eyebrow { color: rgba(255,255,255,.7); }
+.cta-section .label-eyebrow      { color: rgba(255,255,255,.7); }
+.section--forest .label-eyebrow  { color: rgba(255,255,255,.7); }
 .pricing-range {
   font-family: var(--f-display);
   font-style: italic;

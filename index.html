@@ -14,6 +14,19 @@
   <meta name="description" content="Viví Carmelo — Administración de propiedades para alquiler por Airbnb en Carmelo, Uruguay. Aumentamos tus ingresos sin que te ocupes de nada. Golf, bodegas, Río Uruguay.">
   <meta name="keywords" content="alquiler temporario Carmelo Uruguay, Airbnb Carmelo Uruguay, property manager Carmelo, administración propiedades Carmelo, alquiler corto plazo Colonia Uruguay">
   <title>Viví Carmelo — Administración de Propiedades Airbnb</title>
+  <!-- Preconnect: establece TCP con Google Fonts antes de que llegue el CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts: carga asíncrona (no bloquea render, display=swap en la URL) -->
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"></noscript>
+  <!-- Preload imagen LCP: le dice al browser que la priorice desde el inicio -->
+  <link rel="preload" as="image" fetchpriority="high"
+    href="https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_1200/v1782684417/imgprincipal_ublb2f.webp"
+    imagesrcset="https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_480/v1782684417/imgprincipal_ublb2f.webp 480w,
+                 https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_800/v1782684417/imgprincipal_ublb2f.webp 800w,
+                 https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_1200/v1782684417/imgprincipal_ublb2f.webp 1200w"
+    imagesizes="(max-width: 768px) 100vw, 50vw">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="https://res.cloudinary.com/dhe2flcrt/image/upload/v1782695231/favicon_c6m3of.ico" type="image/png">
 </head>
@@ -36,6 +49,7 @@
   </ul>
 </nav>
 
+<main>
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
@@ -61,12 +75,45 @@
   </div>
 
   <div class="hero-slideshow">
-    <img class="hero-slide active" src="https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684417/imgprincipal_ublb2f.webp" alt="">
-    <img class="hero-slide" src="https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684418/D_799223-MLU112601869758_062026-F_sewuut.webp" alt="">
-    <img class="hero-slide" src="https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684416/D_624081-MLU113781447221_062026-F_zghul9.webp" alt="">
-    <img class="hero-slide" src="https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684417/D_645344-MLU112602106020_062026-F_f5ar5d.webp" alt="">
-    <img class="hero-slide" src="https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684418/D_855606-MLU113781360669_062026-F_rplbp0.webp" alt="">
-    <img class="hero-slide" src="https://res.cloudinary.com/dhe2flcrt/image/upload/v1782684418/D_829951-MLU113781360665_062026-F_dbgapz.webp" alt="">
+    <img class="hero-slide active"
+      style="transition:none"
+      fetchpriority="high"
+      src="https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_1200/v1782684417/imgprincipal_ublb2f.webp"
+      srcset="https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_480/v1782684417/imgprincipal_ublb2f.webp 480w,
+              https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_800/v1782684417/imgprincipal_ublb2f.webp 800w,
+              https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_1200/v1782684417/imgprincipal_ublb2f.webp 1200w"
+      sizes="(max-width: 768px) 100vw, 50vw"
+      alt="Propiedad en Carmelo, Uruguay">
+    <img class="hero-slide" loading="lazy"
+      src="https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_1200/v1782684418/D_799223-MLU112601869758_062026-F_sewuut.webp"
+      srcset="https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_480/v1782684418/D_799223-MLU112601869758_062026-F_sewuut.webp 480w,
+              https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_800/v1782684418/D_799223-MLU112601869758_062026-F_sewuut.webp 800w,
+              https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_1200/v1782684418/D_799223-MLU112601869758_062026-F_sewuut.webp 1200w"
+      sizes="(max-width: 768px) 100vw, 50vw" alt="">
+    <img class="hero-slide" loading="lazy"
+      src="https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_1200/v1782684416/D_624081-MLU113781447221_062026-F_zghul9.webp"
+      srcset="https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_480/v1782684416/D_624081-MLU113781447221_062026-F_zghul9.webp 480w,
+              https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_800/v1782684416/D_624081-MLU113781447221_062026-F_zghul9.webp 800w,
+              https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_1200/v1782684416/D_624081-MLU113781447221_062026-F_zghul9.webp 1200w"
+      sizes="(max-width: 768px) 100vw, 50vw" alt="">
+    <img class="hero-slide" loading="lazy"
+      src="https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_1200/v1782684417/D_645344-MLU112602106020_062026-F_f5ar5d.webp"
+      srcset="https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_480/v1782684417/D_645344-MLU112602106020_062026-F_f5ar5d.webp 480w,
+              https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_800/v1782684417/D_645344-MLU112602106020_062026-F_f5ar5d.webp 800w,
+              https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_1200/v1782684417/D_645344-MLU112602106020_062026-F_f5ar5d.webp 1200w"
+      sizes="(max-width: 768px) 100vw, 50vw" alt="">
+    <img class="hero-slide" loading="lazy"
+      src="https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_1200/v1782684418/D_855606-MLU113781360669_062026-F_rplbp0.webp"
+      srcset="https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_480/v1782684418/D_855606-MLU113781360669_062026-F_rplbp0.webp 480w,
+              https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_800/v1782684418/D_855606-MLU113781360669_062026-F_rplbp0.webp 800w,
+              https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_1200/v1782684418/D_855606-MLU113781360669_062026-F_rplbp0.webp 1200w"
+      sizes="(max-width: 768px) 100vw, 50vw" alt="">
+    <img class="hero-slide" loading="lazy"
+      src="https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_1200/v1782684418/D_829951-MLU113781360665_062026-F_dbgapz.webp"
+      srcset="https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_480/v1782684418/D_829951-MLU113781360665_062026-F_dbgapz.webp 480w,
+              https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_800/v1782684418/D_829951-MLU113781360665_062026-F_dbgapz.webp 800w,
+              https://res.cloudinary.com/dhe2flcrt/image/upload/f_auto,q_auto,w_1200/v1782684418/D_829951-MLU113781360665_062026-F_dbgapz.webp 1200w"
+      sizes="(max-width: 768px) 100vw, 50vw" alt="">
   </div>
 </section>
 
@@ -314,6 +361,7 @@
   </div>
 </section>
 
+</main>
 <!-- FOOTER -->
 <footer>
   <div class="footer-top">
@@ -375,6 +423,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 const slides = document.querySelectorAll('.hero-slide');
 let current = 0;
 setInterval(() => {
+  slides[current].style.transition = ''; /* reactiva CSS transition antes del fade-out */
   slides[current].classList.remove('active');
   current = (current + 1) % slides.length;
   slides[current].classList.add('active');
